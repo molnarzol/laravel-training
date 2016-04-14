@@ -14,9 +14,9 @@
         </ul>
 
         <div>
-            <a href="{{ route('niceaction', ['action' => 'greet']) }}">Greet</a>
-            <a href="{{ route('niceaction', ['action' => 'hug']) }}">Hug</a>
-            <a href="{{ route('niceaction', ['action' => 'kiss']) }}">Kiss</a>
+            @foreach($actions as $action)
+                <a href="{{ route('niceaction', ['action' => lcfirst($action->name)]) }}">{{$action->name}}</a>
+            @endforeach
         </div>
 
         <div>
@@ -30,17 +30,27 @@
                     </ul>
                 </div>
             @endif
-            <form action="{{route('benice')}}" method="post">
-                <label form="elect-action">I want to ...</label>
-                <select id="select-action" name="action">
-                    <option value="greet">Greet</option>
-                    <option value="hug">Hug</option>
-                    <option value="kiss">Kiss</option>
-                </select>
-                <input type="text" name="name">
+            <form action="{{route('add_action')}}" method="post">
+                <label for="name">Name of action</label>
+                <input type="text" name="name" id="name">
+                <label for="niceness">niceness</label>
+                <input type="text" name="niceness" id="niceness">
                 <button type="submit">Do</button>
                 <input type="hidden" value="{{ Session::token() }}" name="_token">
             </form>
+        </div>
+
+        <div>
+            <ul>
+                @foreach($logged_actions as $logged_action)
+                    <li>
+                        {{$logged_action->nice_action->name}}
+                        @foreach($logged_action->nice_action->categories as $category)
+                            {{$category->name}}
+                        @endforeach
+                    </li>
+                @endforeach
+            </ul>
         </div>
     </div>
 @endsection

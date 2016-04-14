@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', [
+    'uses' => 'NiceActionController@getHome',
+    'as' => 'home'
+]);
 
 Route::group(['prefix' => 'do'], function() {
     Route::get('/{action}/{name?}', [
@@ -22,8 +23,8 @@ Route::group(['prefix' => 'do'], function() {
         ]);
 
     Route::post('/', [
-        'uses' => 'NiceActionController@postNiceAction',
-        'as' => 'benice'
+        'uses' => 'NiceActionController@postInsertNiceAction',
+        'as' => 'add_action'
     ]);
 
 });
