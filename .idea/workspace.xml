@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="668a4568-28bd-4c7f-96c5-3184ba11cfed" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/app/Http/Controllers/NiceActionController.php" afterPath="$PROJECT_DIR$/blog/app/Http/Controllers/NiceActionController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/public/src/css/style.css" afterPath="$PROJECT_DIR$/blog/public/src/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog/resources/views/home.blade.php" afterPath="$PROJECT_DIR$/blog/resources/views/home.blade.php" />
     </list>
     <ignored path="laravel-training.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,8 +27,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blog/public/src/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="828">
-              <caret line="164" column="1" selection-start-line="164" selection-start-column="1" selection-end-line="164" selection-end-column="1" />
+            <state relative-caret-position="34">
+              <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -641,12 +638,12 @@
       <option name="presentableId" value="Default" />
       <updated>1460547937739</updated>
       <workItem from="1460547938914" duration="11057000" />
-      <workItem from="1460615866512" duration="11916000" />
+      <workItem from="1460615866512" duration="12100000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22973000" />
+    <option name="totallyTimeSpent" value="23157000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="21" width="1696" height="1026" extended-state="6" />
@@ -958,8 +955,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/blog/public/src/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="164" column="1" selection-start-line="164" selection-start-column="1" selection-end-line="164" selection-end-column="1" />
+        <state relative-caret-position="34">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
           <folding />
         </state>
       </provider>
