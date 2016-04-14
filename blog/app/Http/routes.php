@@ -10,22 +10,23 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+/*
 Route::get('/', [
     'uses' => 'NiceActionController@getHome',
     'as' => 'home'
+]);*/
+
+Route::get('/{author?}', [
+    'uses' => 'QuoteController@getIndex',
+    'as' => 'index'
 ]);
 
-Route::group(['prefix' => 'do'], function() {
-    Route::get('/{action}/{name?}', [
-            'uses' => 'NiceActionController@getNiceAction',
-            'as' => 'niceaction'
-        ]);
+Route::get('/delete/{quote_id}', [
+    'uses' => 'QuoteController@getDeleteQuote',
+    'as' => 'delete'
+]);
 
-    Route::post('/', [
-        'uses' => 'NiceActionController@postInsertNiceAction',
-        'as' => 'add_action'
-    ]);
-
-});
-
+Route::post('/new', [
+    'uses' => 'QuoteController@postQuote',
+    'as' => 'create'
+]);
