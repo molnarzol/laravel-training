@@ -5,13 +5,15 @@ namespace App\Http\Controllers;
 use \Illuminate\Http\Request;
 use App\NiceAction;
 use App\NiceActionLog;
+use DB;
 
 class NiceActionController extends Controller {
 
     public function getHome() {
-        $actions = NiceAction::all();
+//        $actions = NiceAction::all();
+        $actions = NiceAction::orderBy('niceness', 'desc')->get();
 
-        $logged_actions = NiceActionLog::all();
+        $logged_actions = NiceActionLog::paginate(5);
 
         return view('home', ['actions' => $actions, 'logged_actions' => $logged_actions]);
     }
@@ -41,6 +43,9 @@ class NiceActionController extends Controller {
 
         $actions = NiceAction::all();
 
+        if ($request->ajax()) {
+            return response()->json();
+        }
         return redirect()->route('home', ['actions' => $actions]);
     }
 

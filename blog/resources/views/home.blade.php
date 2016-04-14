@@ -1,4 +1,5 @@
 @extends('layouts.master')
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 
 @section('content')
     <div class="centered">
@@ -35,7 +36,7 @@
                 <input type="text" name="name" id="name">
                 <label for="niceness">niceness</label>
                 <input type="text" name="niceness" id="niceness">
-                <button type="submit">Do</button>
+                <button type="submit" onclick="send(event)">Do</button>
                 <input type="hidden" value="{{ Session::token() }}" name="_token">
             </form>
         </div>
@@ -51,6 +52,24 @@
                     </li>
                 @endforeach
             </ul>
+            {!! $logged_actions->links() !!}
+
+            @if($logged_actions->lastPage() > 1)
+                @for( $i = 1; $i <= $logged_actions->lastPage(); $i++)
+                    <a href="{{ $logged_actions->url($i) }}">{{ $i }}</a>
+                @endfor
+            @endif
         </div>
+
+        <script type="text/javascript">
+            function send(event) {
+                event.preventDefault();
+                $.ajax ({
+                    type: "POST",
+                    url: "{{ route('add_action') }}",
+                    data: {name: $('#name').val() ,niceness:$('#niceness').val(), _token:"{{ Session::token() }}"}
+                });
+            }
+        </script>
     </div>
 @endsection
