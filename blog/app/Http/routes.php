@@ -52,7 +52,7 @@ Route::post('/admin/login', [
 //    'as' => 'admin.dashboard'
 //]);
 //
-//Route::get('/admin/quotes',function() {
+//Route::get('/admin/quotes',function) {
 //    return view('admin.quotes');
 //})->middleware('auth');
 
