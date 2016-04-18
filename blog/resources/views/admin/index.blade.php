@@ -84,7 +84,7 @@
     </div>
 
     <div class="modal" id="contact-messge-info">
-        <button class="btn" id="modal-close"></button>
+        <button class="btn" id="modal-close">Close</button>
     </div>
 @endsection
 
